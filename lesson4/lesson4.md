@@ -1,0 +1,82 @@
+# IFT-6002
+
+## Domaine
+- contient la logique d'affaire
+- contient ce qui est complexe dans l'application
+- différencier le domaine du problème et le domaine de la solution
+    - Domaine problème
+    : - possède un vocabulaire
+    ubiquitous language (sans équivoque et non ambiguë)
+        - doit être puissé du client lui-même
+        - nous essayons de développer la logique au cœur de l'application en se collant le plus possible sur les activités dans la vraie vie du client
+        - aider le client à cibler ses besoins et ses priorités
+        - le problème possède des comportements qui sont associés à des données qui sont eux-mêmes associées à des concepts.
+    - Domaine solution
+    : - technologie permettant de donner vie à la solution
+        - technologie change plus rapidement que le problème que nous cherchons à résoudre
+        - ne pas calquer l'architecture sur la solution, mais bien sur le problème
+        - il y a toujours des avantages et des inconvénients à chaque technologie
+        - nous ne voulons pas avoir à modifier le domaine du problème à la suite d'un changement de technologie
+- règles d'affaires
+    - il s'agit de l'intersection entre le domaine du problème et le domaine de la solution
+    - contrainte technique (sans valeur pour le client) combinées à des contraintes du domaine (valeur pour le client).
+- Où se situe le domaine?
+    - au cœur de l'application
+- Que contient-t'il?
+    - une série de classes/objets qui collaborent entre elles
+    - analogie toile d'araignée
+    - aucune considération technique
+    - simplement les considérations d'affaire
+    - composition d'objets qui génère des résultats
+    - nous pouvons faire intervenir les objets sous différentes combinaisons qui produiront des résultats différents
+    - on essaye de cacher la complexité en la déplaçant
+    - diviser le problème en plusieurs petites étapes
+        - complexité linéaire (syntaxique) -> pour la faire reposer sur l'architecture
+        - la complexité est toujours présente
+        - la complexité du domaine devrait être proportionnelle à la complexité du problème que l'on cherche à résoudre
+- responsable de représenter les concepts d'affaire, information à propos de la situation d'affaire et les règles d'affaire
+- bundle context -> BDD -> contexte d'application du domaine
+- core domain -> ce qui rend l'application unique (celle qui fera faire de l'argent à l'entreprise)
+- supporting domain -> trop proche du domain pour en être dissocié complètement et pour S
+- generic domain -> solution préétablie déjà existante (facturation, gestion de tâches, etc.)
+- How to connect different domains together?
+    - See [Domain Driven Design Vaugh Vernon](https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577)
+- Problème de ne pas encapsuler la logique avec les données -> ripple effect si les données changent
+    - mène à la création d'un domaine anémique
+    - le domaine se fait sucer son sang par les autres couches -> il devient anémique
+    - lorsqu'il y a des changements, cela résulte en une marre de sang
+    - à éviter lorsque nous sommes en présence d'un problème avec beaucoup de logique d'affaire
+    - les couches qui exploitent les données du domaine aura souvent tendance à évoluer en god class
+- POJO
+: - Plain Old Java Object  
+    - Terme initialement utilisé par Martin Fowler
+    - Objet qui n'hérite de rien
+    - La communauté a repris ce terme pour désigner des classes n'ayant que des attributes et des getters/setters
+- 3 types d'objets
+    - Structure de données
+        - list, map, queue, etc.
+    - Reference Object
+        - mutable
+        - comparer par un identificateur unique (adresse en mémoire)
+            - ne pas confondre l'identifiant de la base de donnée avec l'identifiant du domaine
+            - à default de ne pas en avoir prévu un tel identifiant, nous pouvons utiliser l'adresse mémoire
+            - valeur momentannée
+    - Value Object
+        - représentation d'un concept qui a été instancié à un moment précis
+        - compare par ses attributs
+        - immuable
+        - permet de nommer/comparer les choses
+        - valeur foncière
+    - Bref, la différence entre les deux derniers types de données réside dans l'évolution de leur valeur au fil du temps (valeur momentanée et valeur foncière)
+- faire attention au primitive obsession
+    - préférable de camoufler nos valeurs souvent des values objects plutôt que d'utiliser des types primitifs directement et de propager cette dépendance partout dans l'application.
+- layer model (pattern) n'est pas une mauvaise architecture pour autant qu'on comprend que les données utilisent le domaine et non pas l'inverse
+- modèle plugin (couche domaine, application et finalement MVC)
+- spectre de la complexité du domaine à résoudre
+    - pauvre: CRUD
+        - Un UI permettant d'éditer une BD
+        - les entités sont naturellement liées
+        - Il serait donc préférable de réduire le nombre de couche
+        - domaine anémique pertinent dans ce cas bien précis
+    - riche: Riche (domaine avec beaucoup de règle d'affaire et plusieurs interactions entre les classes)
+        - domaine anémique sera un arrêt de mort
