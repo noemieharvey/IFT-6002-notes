@@ -1,0 +1,102 @@
+# IFT-6002
+
+## Éthique et professionnalisme
+- nouvelle économie (arrivée d'une nouvelle ère)
+    - cette ère reposera sur des logiciels
+- la quantité de code ne fait qu'augmenter
+- profession jeune
+    - un peu inquiétant pour toutes les responsabilités que nous aurons
+- prendre ses responsabilités
+    - c'est de faire des mises en production qui fonctionnent
+    - visé un 0% d'échec
+    - l'industrie ne mesure pas assez
+        - en général
+            - on mesure si on entre dans le budget dans les temps
+        - mais encore
+            - regarder le taux d'utilisation des features
+- les programmeurs font partis de la chaîne d'expérience du client
+    - générer des bonnes expériences client
+    - user experience =/= user interface
+        - il ne s'agit que d'un petit facteur
+        - les clients prennent ceci pour acquis
+    - à qui est destiné ce produit/feature (personna)
+        - se mettre dans la peau du client
+        - intégrer le client dans le cycle de développement
+- se tenir à jour
+    - modèle dreyfus
+    - continuous learning
+    - milieu qui évolue très rapidement
+    - attention aux buzzwords
+        - solution simple qui répond à tous les besoins
+        - il n'y a pas de solution magique
+        - faire de l'architecture c'est difficile
+    - utiliser la techno à bon escient
+- ce à quoi on s'attend de nous
+    - Smart Creatives
+        - combine technical knowledge, business expertise and creativity
+- il faut s'entraîner
+- il faut s'entourer de gens professionnels
+    - qui aime produire de la qualité
+
+## Legacy code
+- règle du boy scoot
+    - laissé plus propre que quand on est arrivé
+- vitre brisée
+    - à la minute que le code prend une mauvaise tournure, un cercle vicieux va s'en suivre
+- propriété collective
+    - le code n'appartient à personne
+    - ne pas accorder de valeur sentimentale au code que l'on produit
+- culte du cargo
+    - reproduire une chose qui a réussi en pensant que ça va nécessairement réussir
+        - on ne comprends pas le principe sous-jacent
+        - focalise sur l'objet (apparence) plutôt que le fonctionnement
+- golden hammer / silver bullet
+    - un outil qui fait tout n'existe pas
+- dette technique
+    - faire du code dure à maintenir
+        - on emprunte sur la carte de crédit
+            - dettes prendront de l'ampleur dans le temps
+                - devra rembourser à des coûts plus importants dans le futur
+    - vélocité de développement diminue avec le temps
+    - il existe aussi la dette de gestion et la dette technologique
+    - la différence est que ce sont les programmeurs eux-mêmes qui produise cette dette comparativement aux autres
+    - les entreprises sous-estiment le coût de maintenance par rapport au coût de maintenance
+        - ce coût est habituellement plus élevé
+    - il existe plusieurs générations de dettes techniques
+        1. (MEILLEUR SCÉNARIO) qualité externe mauvaise + qualité interne mauvaise = échec rapide
+            - clients frustrés, code figé -> refonte ou mort
+        2. (PIRE SCÉNARIO) qualité externe bonne + qualité interne mauvaise = échec avec longue agonie
+            - clients contents, mais impossible à soutenir -> dette immense
+- dette technique est traître
+    - quadrant de la dette technique
+        - irréfléchi/délibéré
+            - pas le temps de faire un bon design
+        - irréfléchi/accidentel
+            - design en couche c'est quoi?
+        - prudente/délibéré
+            - il faut livrer maintenant et faire face aux conséquences
+        - prudente/accidentel
+            - on sait maintenant qu'on aurait dû le faire
+- du legacy code c'est
+    - pas de notion d'âge (code écrit il y a 10 ans plus maintenable que le code produit il y a trois mois)
+    - nous ne sommes pas outillé pour travailler avec du legacy code
+    - code difficile à maintenir point
+- en français - code patrimoniale
+- première étape quand on change du legacy code
+    - faire des tests de caractérisation
+    - comprendre le comportement
+- chose à ne pas faire
+    - big bang refactoring
+    - tout débrancher
+        - on essaye de refactor le code
+            - on revient pour tout rebrancher
+                - rien ne fonctionne
+                    - on ne change pas un bout de code qui répond toujours aux besoins
+    - on évite le merging hell
+    - on continue de produire de la valeur
+- le vrai problème avec le legacy code
+    - on utilise trop appellation du brown field
+        - on doit adopter une attitude plus positive
+            - on fait de la rénovation
+            - le code ne peut pas être pire
+            - beau code en devenir
