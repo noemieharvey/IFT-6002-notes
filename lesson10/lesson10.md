@@ -1,1 +1,57 @@
 # IFT-6002
+
+## Complexité cyclomatique
+- Métrique McCabe
+- Nombre de chemins linéairement indépendants (nombre de branches)
+- diviser le code en bloc
+- chaque fois qu'il y a une décision (boucle, if, etc.) diviser en alternatives
+
+## Entreprise
+- assurer la qualité "built-in"
+- problème de processus - le processus doit générer des défauts
+- plus on découvre des problèmes tard plus ils coûtent chers à réparer
+- comment intégrer la qualité
+    - changer la mentalité
+        - contrôle de la qualité -> assurance de la qualité
+        - chaîne de montage -> assurance qualité à la fin
+            - prise d'échantillon
+            - ne fonctionne pas en programmation
+                - tout ce qu'on produit est unique
+                - on doit donc tout échantillonner
+            - rien ne doit être trouvé par la team QA
+                - mindset entreprise -> yes nous l'avons attrapé
+                    - devrait plutôt dire -> notre processus a laissé échapper ce bug
+                        - manque-t'il des tests ?
+                        - mauvais découpage d'équipe ?
+            - contrôle -> réactif
+            - qualité -> proactif
+            - les tests ne sont pas une phase
+                - il s'agit d'une activité qui fait partie du développement
+- responsabilisation
+    - la qualité est la tâche de tout le monde
+        - traduit bien le problème d'avoir une police
+        - enlever le sentiment de responsabilité des citoyens en pensant que la police va veiller sur eux
+    - le but n'est pas de pointer du doigt une personne responsable
+        - entreprise horizontal vs pyramidale
+        - macro échec vs micro échec
+        - culture d'entreprise
+- empowerment
+    - seule façon de faire du logiciel complexe en 2018
+    - certains peuvent ne pas aimer -> signifie de prendre la responsabilité de nos choix
+    - peut en retirer plus de fierté
+- Rôle des gens d'assurance qualité
+    - embed les gens QA dans chaque équipe
+    - créer des équipes produits
+    - arrêter de diviser les gens par corps de métier
+    - les mettre proches des gens de produits
+    - au lieu de les mettre à la fin du cycle produit, les mettre au début
+    - maîtrise domaine d'affaire
+    - capacité incroyable à trouver des détails
+    - ne plus les nommer des testeurs, mais des ingénieurs de la productivité
+    - on l'habitude des relations clients
+    - tests manuels -> rôle de n'importe qui dans l'équipe
+- three amigos
+    - trois compétences clés dans une équipe de développement
+        - affaire -> génération de valeur
+        - UX/QA -> détails
+        - Dev/ops/sécurité -> faisabilité
